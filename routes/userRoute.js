@@ -25,7 +25,7 @@ router.post('/login',async(req,res)=>{
         }
         return res.send({message:"Invalid password"})
     } catch (error) {
-      res.status(500).send({message:"Something Went Wrong"})  
+      res.status(500).send({message:"Something Went Wrongg"})  
     }
 })
 module.exports=router;
