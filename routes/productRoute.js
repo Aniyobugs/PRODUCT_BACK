@@ -23,7 +23,7 @@ router.post('/',upload.array("image",5),async(req,res)=>{
         res.status(500).send({message:"Internal server error"})
     }
 })
-router.post('/product',async(req,res)=>{
+router.get('/',async(req,res)=>{
     try {
         const products = await pModel.find();
         res.status(200).json(products);
