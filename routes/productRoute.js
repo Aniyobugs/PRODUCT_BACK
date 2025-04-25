@@ -4,16 +4,18 @@ var pModel = require('../model/product');
 const upload = require('../middleware/multer');
 
 // api to add product details
-router.post('/',upload.array("images",5),async(req,res)=>{
+router.post('/',upload.array("image",5),async(req,res)=>{
     try {
+        console.log("h")
+        console.log(req.body)
         const imagePaths = req.files.map(file=>file.filename)
-        const{pname,price,stock,discription}=req.body;
+        const{pname,price,stock,description}=req.body;
        const newProduct = new pModel({
         pname,
         price,
         stock,
-        discription,
-        images:imagePaths
+        description,
+        image:imagePaths
        })
        await newProduct.save()
        res.status(200).send({message:"Product added successfully",product:newProduct})

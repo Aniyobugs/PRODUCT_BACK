@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/api',userRoute)
-app.use('/api',productRoute)
+app.use('/p',productRoute)
 
 
 app.listen(port,()=>{
